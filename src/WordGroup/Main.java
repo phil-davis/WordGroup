@@ -47,15 +47,18 @@ public class Main {
 	        }
 	    };
         
-        System.out.println("Word groups and counts:");
-
         Collections.sort(ll, new BigWordCountFirst());
         
-        ListIterator<WordGroup> listIterator2 = ll.listIterator();
-    	while (listIterator2.hasNext()) {
-    		WordGroup wg = listIterator2.next();
-        	System.out.println(wg.wordCount() + ": " + wg.wordListAsString());
-		}
+        if (ll.size() == 0) {
+	        System.out.println("No words to count.");
+        } else {
+	        System.out.println("Word groups and counts:");
+	        ListIterator<WordGroup> listIterator2 = ll.listIterator();
+	    	while (listIterator2.hasNext()) {
+	    		WordGroup wg = listIterator2.next();
+	        	System.out.println(wg.wordCount() + ": " + wg.wordListAsString());
+			}
+        }
         scan.close();
     }
 
