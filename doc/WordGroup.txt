@@ -17,3 +17,9 @@ Word groups and counts:
 4: who how Who How
 2: a A
 
+Word entry:
+- If the user enters leading or trailing space, it is ignored, only the non-whitespace is considered.
+- If the user enters multiple words on the one line then only the first word is processed, the rest is ignored.
+  for example "word two" - only "word" is processed.
+- Any non-whitespace is considered in a word, e.g. "Question?", "!Exclamation", "Fullstop." are considered "words".
+  (This could be changed if the user specified different user requirements)
