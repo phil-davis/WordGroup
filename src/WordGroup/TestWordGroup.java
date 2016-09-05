@@ -309,6 +309,22 @@ public class TestWordGroup {
     }
 
     @Test
+    public void checkAddWordHyphen() {
+        System.out.println("Checking addWord with hyphen");
+
+        WordGroup instance = new WordGroup("well-formed");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("formed-well");
+        assertEquals(expResult, result);
+        String expStr = "well-formed formed-well";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 2;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
     public void checkAddWordDuplicate() {
         System.out.println("Checking addWord duplicate");
 
