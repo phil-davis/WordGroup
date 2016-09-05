@@ -26,7 +26,9 @@ public class WordGroup {
     // -------------------------
     public Boolean addWord(String s1) {
     	if (this.wordMatchesGroup(s1)) {
-            this.ll.add(s1);
+    		if (!this.ll.contains(s1)) {
+    			this.ll.add(s1);
+    		}
             return true;
     	} else {
     		return false;

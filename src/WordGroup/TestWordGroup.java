@@ -309,6 +309,32 @@ public class TestWordGroup {
     }
 
     @Test
+    public void checkAddWordDuplicate() {
+        System.out.println("Checking addWord duplicate");
+
+        WordGroup instance = new WordGroup("abc");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        result = instance.addWord("cba");
+        assertEquals(expResult, result);
+        // "abc" should not be added a 2nd time
+        result = instance.addWord("abc");
+        assertEquals(expResult, result);
+        // "cBa" should not be added a 2nd time
+        result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        result = instance.addWord("bac");
+        assertEquals(expResult, result);
+        String expStr = "abc cBa cba bac";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 4;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
     public void checkAddWordMany() {
         System.out.println("Checking addWord");
 
