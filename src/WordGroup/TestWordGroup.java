@@ -187,8 +187,8 @@ public class TestWordGroup {
     }
 
     @Test
-    public void checkWordMatchesGroupNot1() {
-        System.out.println("Checking if word matches group not 1");
+    public void checkWordMatchesGroupShorter() {
+        System.out.println("Checking if word matches group shorter");
 
         WordGroup instance = new WordGroup("fYx59pW3qX55");
         Boolean expResult = false;
@@ -197,8 +197,8 @@ public class TestWordGroup {
     }
 
     @Test
-    public void checkWordMatchesGroupNot2() {
-        System.out.println("Checking if word matches group not 2");
+    public void checkWordMatchesGroupLonger() {
+        System.out.println("Checking if word matches group longer");
 
         WordGroup instance = new WordGroup("fYx59pW3qX55");
         Boolean expResult = false;
@@ -207,12 +207,32 @@ public class TestWordGroup {
     }
 
     @Test
-    public void checkWordMatchesGroupNot3() {
-        System.out.println("Checking if word matches group not 3");
+    public void checkWordMatchesGroupDifferent() {
+        System.out.println("Checking if word matches group different");
 
         WordGroup instance = new WordGroup("fYx59pW3qX55");
         Boolean expResult = false;
         Boolean result = instance.wordMatchesGroup("pXkY3x59f5qW");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNull1() {
+        System.out.println("Checking if word matches group null 1");
+
+        WordGroup instance = new WordGroup("");
+        Boolean expResult = false;
+        Boolean result = instance.wordMatchesGroup("x");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNull2() {
+        System.out.println("Checking if word matches group null 2");
+
+        WordGroup instance = new WordGroup("x");
+        Boolean expResult = false;
+        Boolean result = instance.wordMatchesGroup("");
         assertEquals(expResult, result);
     }
 

@@ -29,6 +29,9 @@ public class WordGroup {
     }
 
     public Boolean wordMatchesGroup(String s1) {
+    	if (s1.length() != this.WordKey.length()) {
+    		return false;
+    	}
     	char[] chararray = s1.toLowerCase().toCharArray();
     	Arrays.sort(chararray);
     	return (this.WordKey.equals(String.valueOf(chararray)));
