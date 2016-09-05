@@ -27,4 +27,10 @@ public class WordGroup {
     public String getWordKey() {
     	return this.WordKey;
     }
+
+    public Boolean wordMatchesGroup(String s1) {
+    	char[] chararray = s1.toLowerCase().toCharArray();
+    	Arrays.sort(chararray);
+    	return (this.WordKey.equals(String.valueOf(chararray)));
+    }
 }

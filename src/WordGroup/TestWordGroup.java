@@ -136,4 +136,84 @@ public class TestWordGroup {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void checkWordMatchesGroup1() {
+        System.out.println("Checking if word matches group 1");
+
+        WordGroup instance = new WordGroup("abc");
+        Boolean expResult = true;
+        Boolean result = instance.wordMatchesGroup("abc");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroup2() {
+        System.out.println("Checking if word matches group 2");
+
+        WordGroup instance = new WordGroup("abc");
+        Boolean expResult = true;
+        Boolean result = instance.wordMatchesGroup("ABC");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroup3() {
+        System.out.println("Checking if word matches group 3");
+
+        WordGroup instance = new WordGroup("abc");
+        Boolean expResult = true;
+        Boolean result = instance.wordMatchesGroup("CBA");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNull() {
+        System.out.println("Checking if word matches group Null");
+
+        WordGroup instance = new WordGroup("");
+        Boolean expResult = true;
+        Boolean result = instance.wordMatchesGroup("");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupMixed() {
+        System.out.println("Checking if word matches group mixed");
+
+        WordGroup instance = new WordGroup("fYx59pW3qX55");
+        Boolean expResult = true;
+        Boolean result = instance.wordMatchesGroup("pX5Y3x59f5qW");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNot1() {
+        System.out.println("Checking if word matches group not 1");
+
+        WordGroup instance = new WordGroup("fYx59pW3qX55");
+        Boolean expResult = false;
+        Boolean result = instance.wordMatchesGroup("pX5Y3x59fqW");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNot2() {
+        System.out.println("Checking if word matches group not 2");
+
+        WordGroup instance = new WordGroup("fYx59pW3qX55");
+        Boolean expResult = false;
+        Boolean result = instance.wordMatchesGroup("pX5Y3x5g9f5qW");
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordMatchesGroupNot3() {
+        System.out.println("Checking if word matches group not 3");
+
+        WordGroup instance = new WordGroup("fYx59pW3qX55");
+        Boolean expResult = false;
+        Boolean result = instance.wordMatchesGroup("pXkY3x59f5qW");
+        assertEquals(expResult, result);
+    }
+
 }
