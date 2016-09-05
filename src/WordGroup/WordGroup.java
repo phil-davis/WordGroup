@@ -24,6 +24,15 @@ public class WordGroup {
     // -------------------------
     // Methods
     // -------------------------
+    public Boolean addWord(String s1) {
+    	if (this.wordMatchesGroup(s1)) {
+            this.ll.add(s1);
+            return true;
+    	} else {
+    		return false;
+    	}
+    }
+    
     public String wordKey() {
     	return this.WordKey;
     }

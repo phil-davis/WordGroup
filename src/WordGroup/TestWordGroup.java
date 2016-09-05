@@ -286,4 +286,56 @@ public class TestWordGroup {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void checkAddWord() {
+        System.out.println("Checking addWord");
+
+        WordGroup instance = new WordGroup("abc");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        String expStr = "abc cBa";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+    }
+
+    @Test
+    public void checkAddWordBad() {
+        System.out.println("Checking addWord bad");
+
+        WordGroup instance = new WordGroup("PrT");
+        Boolean expResult = false;
+        Boolean result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        String expStr = "PrT";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+    }
+
+    @Test
+    public void checkAddWordBadLonger() {
+        System.out.println("Checking addWord longer");
+
+        WordGroup instance = new WordGroup("PrT");
+        Boolean expResult = false;
+        Boolean result = instance.addWord("PrT3");
+        assertEquals(expResult, result);
+        String expStr = "PrT";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+    }
+
+    @Test
+    public void checkAddWordBadShorter() {
+        System.out.println("Checking addWord shorter");
+
+        WordGroup instance = new WordGroup("PrT");
+        Boolean expResult = false;
+        Boolean result = instance.addWord("Pr");
+        assertEquals(expResult, result);
+        String expStr = "PrT";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+    }
+
 }
