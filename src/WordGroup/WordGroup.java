@@ -32,6 +32,10 @@ public class WordGroup {
     	return this.WordKey.length();
     }
 
+    public String wordListAsString() {
+    	return String.join(" ", this.ll);
+    }
+
     public Boolean wordMatchesGroup(String s1) {
     	if (s1.length() != this.WordKey.length()) {
     		return false;

@@ -266,4 +266,24 @@ public class TestWordGroup {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void checkWordListAsString1() {
+        System.out.println("Checking wordListAsString with only 1 word");
+
+        WordGroup instance = new WordGroup("DcBa");
+        String expResult = "DcBa";
+        String result = instance.wordListAsString();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordListAsStringEmpty() {
+        System.out.println("Checking wordListAsString with empty word");
+
+        WordGroup instance = new WordGroup("");
+        String expResult = "";
+        String result = instance.wordListAsString();
+        assertEquals(expResult, result);
+    }
+
 }
