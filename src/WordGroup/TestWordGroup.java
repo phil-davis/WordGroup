@@ -293,6 +293,76 @@ public class TestWordGroup {
     }
 
     @Test
+    public void checkNewWordGroupMultipleWords() {
+        System.out.println("Checking creating a new WordGroup multiple words at once");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup("abc def");
+        String expStr = "abc";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
+    public void checkNewWordGroupMultipleWordsSpace() {
+        System.out.println("Checking creating a new WordGroup multiple words at once starting with space");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup(" abc def");
+        String expStr = "abc";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
+    public void checkAddMultipleWords() {
+        System.out.println("Checking adding multiple words at once");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup("abc def");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        result = instance.addWord("cAb xyz123");
+        assertEquals(expResult, result);
+        String expStr = "abc cBa cAb";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 3;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
+    public void checkAddMultipleWordsSpace() {
+        System.out.println("Checking adding multiple words at once with leading spaces");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup("abc def");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("cBa");
+        assertEquals(expResult, result);
+        result = instance.addWord(" cAb xyz123");
+        assertEquals(expResult, result);
+        String expStr = "abc cBa cAb";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 3;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
     public void checkAddWord() {
         System.out.println("Checking addWord");
 

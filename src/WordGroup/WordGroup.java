@@ -15,8 +15,11 @@ public class WordGroup {
     // Constructors
     // -------------------------
     public WordGroup(String s1) {
-        this.ll.add(s1);
-        char[] chararray = s1.toLowerCase().toCharArray();
+    	// Trim space front and back
+    	// Then only consider the first word the caller passed in.
+    	String firstWord = s1.trim().split(" ",2)[0];
+        this.ll.add(firstWord);
+        char[] chararray = firstWord.toLowerCase().toCharArray();
         Arrays.sort(chararray);
         this.WordKey = String.valueOf(chararray);
     }
@@ -25,9 +28,12 @@ public class WordGroup {
     // Methods
     // -------------------------
     public Boolean addWord(String s1) {
-    	if (this.wordMatchesGroup(s1)) {
-    		if (!this.ll.contains(s1)) {
-    			this.ll.add(s1);
+    	// Trim space front and back
+    	// Then only consider the first word the caller passed in.
+    	String firstWord = s1.trim().split(" ",2)[0];
+    	if (this.wordMatchesGroup(firstWord)) {
+    		if (!this.ll.contains(firstWord)) {
+    			this.ll.add(firstWord);
     		}
             return true;
     	} else {
