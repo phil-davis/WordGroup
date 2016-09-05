@@ -41,6 +41,10 @@ public class WordGroup {
     	return this.WordKey.length();
     }
 
+    public int wordCount() {
+    	return this.ll.size();
+    }
+
     public String wordListAsString() {
     	return String.join(" ", this.ll);
     }

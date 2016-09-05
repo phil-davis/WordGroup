@@ -274,6 +274,9 @@ public class TestWordGroup {
         String expResult = "DcBa";
         String result = instance.wordListAsString();
         assertEquals(expResult, result);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
     @Test
@@ -284,6 +287,9 @@ public class TestWordGroup {
         String expResult = "";
         String result = instance.wordListAsString();
         assertEquals(expResult, result);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
     @Test
@@ -297,6 +303,31 @@ public class TestWordGroup {
         String expStr = "abc cBa";
         String strResult = instance.wordListAsString();
         assertEquals(expStr, strResult);
+        int expCount = 2;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
+    public void checkAddWordMany() {
+        System.out.println("Checking addWord");
+
+        WordGroup instance = new WordGroup("a5Y26F");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("f62y5a");
+        assertEquals(expResult, result);
+        expResult = true;
+        result = instance.addWord("652FYA");
+        assertEquals(expResult, result);
+        expResult = true;
+        result = instance.addWord("FAY562");
+        assertEquals(expResult, result);
+        String expStr = "a5Y26F f62y5a 652FYA FAY562";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 4;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
     @Test
@@ -310,6 +341,9 @@ public class TestWordGroup {
         String expStr = "PrT";
         String strResult = instance.wordListAsString();
         assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
     @Test
@@ -323,6 +357,9 @@ public class TestWordGroup {
         String expStr = "PrT";
         String strResult = instance.wordListAsString();
         assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
     @Test
@@ -336,6 +373,9 @@ public class TestWordGroup {
         String expStr = "PrT";
         String strResult = instance.wordListAsString();
         assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
     }
 
 }
