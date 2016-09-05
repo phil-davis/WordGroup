@@ -28,7 +28,8 @@ public class Main {
         while (true) {
 	        System.out.println("Enter a word (or RETURN to finish): ");
 	        String s = scan.nextLine();
-	        if (s.equals("")) {
+	        // Consider a line with only whitespace to mean the user is finished with input.
+	        if (s.trim().equals("")) {
 	        	break;
 	        }
 	        
