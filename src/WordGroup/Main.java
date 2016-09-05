@@ -5,7 +5,7 @@ public class Main {
         WordGroup wg = new WordGroup("How");
         Boolean result = wg.addWord("Who");
         if (result) {
-        	System.out.println(wg.wordLength() + ": " + wg.wordListAsString());
+        	System.out.println(wg.wordCount() + ": " + wg.wordListAsString());
         } else {
         	System.out.println("Error in addWord");
         }
