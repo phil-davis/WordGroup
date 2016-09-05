@@ -23,3 +23,6 @@ Word entry:
   for example "word two" - only "word" is processed.
 - Any non-whitespace is considered in a word, e.g. "Question?", "!Exclamation", "Fullstop." are considered "words".
   (This could be changed if the user specified different user requirements)
+
+Unicode:
+- The program is not intended to support Unicode multi-national character set input and output.
