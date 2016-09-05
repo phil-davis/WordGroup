@@ -17,7 +17,7 @@ public class WordGroup {
     public WordGroup(String s1) {
     	// Trim space front and back
     	// Then only consider the first word the caller passed in.
-    	String firstWord = s1.trim().split(" ",2)[0];
+    	String firstWord = s1.trim().split("[ \\t]",2)[0];
         this.ll.add(firstWord);
         char[] chararray = firstWord.toLowerCase().toCharArray();
         Arrays.sort(chararray);
@@ -30,7 +30,7 @@ public class WordGroup {
     public Boolean addWord(String s1) {
     	// Trim space front and back
     	// Then only consider the first word the caller passed in.
-    	String firstWord = s1.trim().split(" ",2)[0];
+    	String firstWord = s1.trim().split("[ \\t]",2)[0];
     	if (this.wordMatchesGroup(firstWord)) {
     		if (!this.ll.contains(firstWord)) {
     			this.ll.add(firstWord);

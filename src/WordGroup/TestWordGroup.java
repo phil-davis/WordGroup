@@ -323,6 +323,21 @@ public class TestWordGroup {
     }
 
     @Test
+    public void checkNewWordGroupMultipleWordsTab() {
+        System.out.println("Checking creating a new WordGroup multiple words with tab");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup("abcd	def");
+        String expStr = "abcd";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 1;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
     public void checkAddMultipleWords() {
         System.out.println("Checking adding multiple words at once");
 
@@ -355,6 +370,26 @@ public class TestWordGroup {
         result = instance.addWord(" cAb xyz123");
         assertEquals(expResult, result);
         String expStr = "abc cBa cAb";
+        String strResult = instance.wordListAsString();
+        assertEquals(expStr, strResult);
+        int expCount = 3;
+        int count = instance.wordCount();
+        assertEquals(expCount, count);
+    }
+
+    @Test
+    public void checkAddMultipleWordsTab() {
+        System.out.println("Checking adding multiple words at once with tabs");
+
+        // Only the first "word" in the string is to be considered when
+        // making a new WordGroup or adding to a WordGroup.
+        WordGroup instance = new WordGroup("abcd def");
+        Boolean expResult = true;
+        Boolean result = instance.addWord("cBad");
+        assertEquals(expResult, result);
+        result = instance.addWord("	cAbd	xyz123");
+        assertEquals(expResult, result);
+        String expStr = "abcd cBad cAbd";
         String strResult = instance.wordListAsString();
         assertEquals(expStr, strResult);
         int expCount = 3;
