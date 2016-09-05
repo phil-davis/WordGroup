@@ -236,4 +236,34 @@ public class TestWordGroup {
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void checkWordLengthNull() {
+        System.out.println("Checking length of word for Null");
+
+        WordGroup instance = new WordGroup("");
+        int expResult = 0;
+        int result = instance.wordLength();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordLength1() {
+        System.out.println("Checking length of word 1");
+
+        WordGroup instance = new WordGroup("9");
+        int expResult = 1;
+        int result = instance.wordLength();
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    public void checkWordLength12() {
+        System.out.println("Checking length of word 12");
+
+        WordGroup instance = new WordGroup("gP28dYx49Yta");
+        int expResult = 12;
+        int result = instance.wordLength();
+        assertEquals(expResult, result);
+    }
+
 }
