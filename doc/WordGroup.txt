@@ -1,0 +1,19 @@
+WordGroup Documentation
+=======================
+
+Users are asked to enter words, pressing enter between each word.
+
+To indicate they are finished, they enter an empty line (or line of whitespace only).
+
+The program keeps count of the words that are anagrams of each other in a WordGroup object.
+An instance of the WordGroup object contains all strings that are anagrams of each other,
+considered case-insensitive (so "who" and "Who" are considered different words that are anagrams of each other).
+
+The program reports the word groups in descending order of size (number of anagrams in the WordGroup).
+It reports the count of words, a colon, then a space-separated list of the words.
+For example:
+
+Word groups and counts:
+4: who how Who How
+2: a A
+
