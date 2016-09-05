@@ -24,7 +24,7 @@ public class WordGroup {
     // -------------------------
     // Methods
     // -------------------------
-    public String getWordKey() {
+    public String wordKey() {
     	return this.WordKey;
     }
 

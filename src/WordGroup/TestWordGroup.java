@@ -32,7 +32,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("abc");
         String expResult = "abc";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -42,7 +42,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("cba");
         String expResult = "abc";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -52,7 +52,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("ABC");
         String expResult = "abc";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -62,7 +62,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("CBA");
         String expResult = "abc";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -72,7 +72,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("a");
         String expResult = "a";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -82,7 +82,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("A");
         String expResult = "a";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -92,7 +92,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("");
         String expResult = "";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -102,7 +102,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("QwErTy");
         String expResult = "eqrtwy";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -112,7 +112,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("qWeRtY");
         String expResult = "eqrtwy";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -122,7 +122,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("5y32X9a");
         String expResult = "2359axy";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
@@ -132,7 +132,7 @@ public class TestWordGroup {
 
         WordGroup instance = new WordGroup("t588Yftc9y5k5");
         String expResult = "555889cfkttyy";
-        String result = instance.getWordKey();
+        String result = instance.wordKey();
         assertEquals(expResult, result);
     }
 
